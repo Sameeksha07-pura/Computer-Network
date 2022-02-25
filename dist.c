@@ -42,6 +42,7 @@ for(j=1;j<=n;j++)
 printf("%2d",a[i][j]);
 }
 }
+  
 return 0;
 }
 
