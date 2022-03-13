@@ -1,33 +1,29 @@
 #include<stdio.h>
 void main()
 {
-int incoming,outgoing,buffsize,n,store=0,bucksize,res;
-printf("Enter bucket size,outgoing rate and no of inputs ");
+int incoming,outgoing,bucksize,n,store=0;
+printf("Enter bucket size,outgoing rate and no of packets:");
 scanf("%d%d%d",&bucksize,&outgoing,&n);
-printf("Incoming buff size:\n");
-scanf("%d",&buffsize);
-printf("Outgoing value:\n");
-scanf("%d",&outgoing);
 while(n!=0)
 {
 printf("Enter the incoming packet size:\n");
 scanf("%d",&incoming);
-printf("Incoming packet size %d",incoming);
-if(incoming<=(buffsize-store))
+printf("Incoming packet size %d\n",incoming);
+if(incoming<=(bucksize-store))
 {
 store+=incoming;
-printf("Buffer size %d out of %d\n",store,buffsize);
+printf("Bucket buffer size %d out of %d\n",store,bucksize);
 
 }
 else
 {
-printf("Dropped %d no of packet \n",incoming-(buffsize-store));
-printf("buffer size %d out of %d\n",store,buffsize);
-
-store=buffsize;
+printf("Dropped %d no of packets \n",incoming-(bucksize-store));
+printf("Bucket buffer size %d out of %d\n",store,bucksize);
+store=bucksize;
 }
 store=store-outgoing;
-printf("After outgoing %dpacket lefts out of %d buffer\n",store,buffsize);
+printf("After outgoing %d packets left out of %d in buffer\n",store,bucksize);
 n--;
 }
 }
+
