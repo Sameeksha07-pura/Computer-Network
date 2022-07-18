@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="fibo.js"></script>
+</head>
+<script>
+    function FirstN(){
+    var n;
+n = parseInt(prompt("Enter the number of fibonaci: "));
+var msg="";
+
+
+msg="the first"+n+"numbers are "
+
+for ( i = 1; i <= n; i++) {
+   msg+=i + "\n";
+}
+alert(msg);
+    }
+</script>
+<body>
+   <h1 onclick="FirstN();">click</h1> 
+</body>
+</html>
